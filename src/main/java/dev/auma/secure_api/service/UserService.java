@@ -8,9 +8,9 @@ import dev.auma.secure_api.model.User;
 import java.util.List;
 
 public interface UserService {
+    List<User> getUsers();
+    User getUserByUsername(String username) throws UserNotFoundException;
     User saveUser(User user);
     Role saveRole(Role role);
     void addRoleToUser(String username, String roleName) throws UserNotFoundException, RoleNotFoundException;
-    User getUserByUsername(String username) throws UserNotFoundException;
-    List<User> getUsers();
 }
