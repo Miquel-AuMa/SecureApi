@@ -23,11 +23,13 @@ public class TransactionController {
         return transactionService.getTransactions();
     }
 
+    //TODO: capture exceptions
     @GetMapping("/name/{name}")
     public Transaction findByName(@PathVariable String name) throws TransactionNotFoundException {
         return transactionService.getTransactionByName(name);
     }
 
+    //TODO: capture exceptions
     @GetMapping("/id/{id}")
     public Transaction findById(@PathVariable Long id) throws TransactionNotFoundException{
         return transactionService.getTransactionById(id);
@@ -39,6 +41,7 @@ public class TransactionController {
         return ResponseEntity.created(uri).body(transactionService.saveNote(transaction));
     }
 
+    //TODO: capture exceptions
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/update/{id}")
     public void update(@PathVariable Long id, @RequestBody Transaction transaction) throws TransactionNotFoundException {
