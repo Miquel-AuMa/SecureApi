@@ -23,8 +23,8 @@ public class TransactionController {
         return transactionService.getTransactions();
     }
 
-    @GetMapping("/title/{title}")
-    public Transaction findByTitle(@PathVariable String name) throws TransactionNotFoundException {
+    @GetMapping("/name/{name}")
+    public Transaction findByName(@PathVariable String name) throws TransactionNotFoundException {
         return transactionService.getTransactionByName(name);
     }
 
