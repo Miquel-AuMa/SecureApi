@@ -9,6 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +20,12 @@ public class SecureApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SecureApiApplication.class, args);
+	}
+
+	// TODO: move to a proper place (utilities class?)
+	@Bean
+	PasswordEncoder passwordEncoder(){
+		return new BCryptPasswordEncoder();
 	}
 
 	// Adds basic data to the database at application startup
@@ -40,7 +48,6 @@ public class SecureApiApplication {
 			userService.saveUser(new User(null, "Admin", "admin", "1234", new ArrayList<>()));
 
 			userService.addRoleToUser("user", "ROLE_USER");
-			userService.addRoleToUser("admin", "ROLE_USER");
 			userService.addRoleToUser("admin", "ROLE_ADMIN");
 
 			System.out.println(userService.getUsers());
