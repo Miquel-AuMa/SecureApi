@@ -3,6 +3,8 @@ package dev.auma.secure_api.controller;
 import dev.auma.secure_api.exception.TransactionNotFoundException;
 import dev.auma.secure_api.model.Transaction;
 import dev.auma.secure_api.service.TransactionService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/transaction")
 @RequiredArgsConstructor
+@Tag(name = "Transactions")
 public class TransactionController {
     private final TransactionService transactionService;
 
