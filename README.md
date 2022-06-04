@@ -39,4 +39,4 @@ This will be the following point for the development of this app:
     1. Add unit tests for the Services mocking the repositories
     2. Add tests for the controllers mocking the possible results of the service 
  2. Improve response of the endpoints of the controllers
- 3. Add Swagger/OpenAPI to document the endpoints
+ 3. Improve endpoints documentation
