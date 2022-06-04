@@ -5,6 +5,7 @@ import dev.auma.secure_api.exception.UserNotFoundException;
 import dev.auma.secure_api.model.Role;
 import dev.auma.secure_api.model.User;
 import dev.auma.secure_api.service.UserService;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 @Tag(name = "Users")
+@Hidden // We don't want to show these endpoints without security
 public class UserController {
 
     private final UserService userService;
