@@ -2,7 +2,7 @@
 
 Small application created to test my knowledge about APIs.
 
-Made with Spring Boot using Spring Web, Spring Security and Spring JPA. Using also H2DataBase as a simple and quick to implement database.
+Made with Spring Boot using Spring Web, Spring Security and Spring JPA. Using also H2DataBase as a simple and quick to implement a database.
 
 ### Requirements
 
@@ -13,25 +13,25 @@ For Building and running the application you need:
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `dev.auma.secure_api.SecureApiApplication` class from your IDE.
 
-### Structure:
+### Structure
 
 I have organized this project having in mind the following structure:
 
 ```
 .
 └── dev.auma.secure_api
-    └── controller                  <-- Controllers of the differents endpoints
-    └── exception                   <-- Custom exceptions for the application
+    └── controller                  <-- Controllers of the different endpoints
+    └── exception                   <-- Custom exceptions in the application
     └── model                       <-- Entities of my application
-    └── repository                  <-- Interfaces of the repositorys
+    └── repository                  <-- Interfaces of the repositories
     └── security                    <-- Security configuration of the application
         └── filter                  <-- Custom authentication and authorization
     └── service                     <-- Interfaces of the services
         └── impl                    <-- Implementation of the services (Business Logic)
-    └── SecureApiApplication.java   <-- Main class to inicialize the application
+    └── SecureApiApplication.java   <-- Main class to initialize the application
 ```
 
-### Next steps:
+### Next steps
 
 This will be the following point for the development of this app:
 
