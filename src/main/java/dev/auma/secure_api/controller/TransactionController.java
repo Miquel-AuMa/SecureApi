@@ -15,7 +15,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/transaction")
+@RequestMapping("/api/transactions")
 @RequiredArgsConstructor
 @Tag(name = "Transactions")
 public class TransactionController {
@@ -27,32 +27,32 @@ public class TransactionController {
     }
 
     //TODO: capture exceptions
-    @GetMapping("/name/{name}")
-    public Transaction findByName(@PathVariable String name) throws TransactionNotFoundException {
-        return transactionService.getTransactionByName(name);
-    }
-
-    //TODO: capture exceptions
     @GetMapping("/id/{id}")
     public Transaction findById(@PathVariable Long id) throws TransactionNotFoundException{
         return transactionService.getTransactionById(id);
     }
 
-    @PostMapping("/save")
+    //TODO: capture exceptions
+    @GetMapping("/name/{name}")
+    public Transaction findByName(@PathVariable String name) throws TransactionNotFoundException {
+        return transactionService.getTransactionByName(name);
+    }
+
+    @PostMapping
     public ResponseEntity<Transaction> create(@RequestBody Transaction transaction) {
-        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/transaction/save").toUriString());
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/transaction").toUriString());
         return ResponseEntity.created(uri).body(transactionService.saveNote(transaction));
     }
 
     //TODO: capture exceptions
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/update/{id}")
+    @PatchMapping("/{id}")
     public void update(@PathVariable Long id, @RequestBody Transaction transaction) throws TransactionNotFoundException {
         transactionService.updateTransaction(id, transaction);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         transactionService.deleteTransaction(id);
     }
