@@ -37,6 +37,12 @@ This will be the following point for the development of this app:
 
  1. Implement testing with JUnit
     1. Add unit tests for the Services mocking the repositories
-    2. Add tests for the controllers mocking the possible results of the service 
+    2. Add tests for the controllers mocking the possible results of the service
+    3. Add security tests
  2. Improve response of the endpoints of the controllers
- 3. Improve endpoints documentation
+    1. Improve the endpoint documentation
+ 3. Add refresh token
+ 4. Add hexagonal architecture: separate model from entities
+ 5. Clean SecureApiApplication.java:
+    1. Add OpenAPIConfig
+    2. Initialize data in another utils class
