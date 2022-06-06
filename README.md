@@ -33,7 +33,7 @@ I have organized this project having in mind the following structure:
 
 ### Next steps
 
-This will be the following point for the development of this app:
+These will be the following points for the development of this app:
 
  1. Implement testing with JUnit
     1. Add unit tests for the Services mocking the repositories
